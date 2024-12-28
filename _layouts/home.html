@@ -47,6 +47,17 @@ refactor: true
   {% endfor %}
 {% endif %}
 
+<!-- Filter the posts by ACTIVE LANGUAGE -->
+{% assign filtered_posts = '' | split: '' %}
+{% for post in posts %}
+  {% if post.lang == site.active_lang %}
+    {% assign filtered_posts = filtered_posts | push: post %}
+  {% elsif post.lang == null and site.active_lang == site.default_lang %}
+    {% assign filtered_posts = filtered_posts | push: post %}
+  {% endif %}
+{% endfor %}
+{% assign posts = filtered_posts %}
+
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
     <article class="card-wrapper card">
