@@ -206,15 +206,15 @@ compress_html:
     envs: [development]
 
 exclude:
-  - "*.gem"
-  - "*.gemspec"
+  # - "*.gem"
+  # - "*.gemspec"
   - docs
   - tools
   - README.md
   - LICENSE
   - purgecss.js
-  - rollup.config.js
-  - "package*.json"
+  # - rollup.config.js
+  # - "package*.json"
 
 jekyll-archives:
   enabled: [categories, tags]
@@ -224,3 +224,12 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+plugins:
+  - jekyll-polyglot
+
+# polyglot configuration
+languages: ["en", "pt-BR"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "assets", "public"]
+parallel_localization: false
