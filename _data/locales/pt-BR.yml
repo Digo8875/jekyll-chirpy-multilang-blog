@@ -16,6 +16,16 @@ tabs:
   archives: Arquivos
   about: Sobre
 
+# The languages of sidebar
+site_languages:
+  en: Inglês
+  pt-BR: Português
+
+# The lang config
+lang_config:
+  languages: Idiomas
+  flag: br
+
 # the text displayed in the search bar & search results
 search:
   hint: Buscar
