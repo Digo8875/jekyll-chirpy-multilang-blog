@@ -5,9 +5,9 @@ layout: compress
 {% assign favicon_path = "/assets/img/favicons" | relative_url %}
 
 {
-  "name": "{{ site.title }}",
-  "short_name": "{{ site.title }}",
-  "description": "{{ site.description }}",
+  "name": "{{ site.title[site.active_lang] }}",
+  "short_name": "{{ site.title[site.active_lang] }}",
+  "description": "{{ site.description[site.active_lang] }}",
   "icons": [
     {
       "src": "{{ favicon_path }}/android-chrome-192x192.png",

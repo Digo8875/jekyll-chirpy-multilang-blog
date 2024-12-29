@@ -7,8 +7,8 @@ permalink: /feed.xml
 {% capture source %}
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>{{ "/" | absolute_url }}</id>
-  <title>{{ site.title }}</title>
-  <subtitle>{{ site.description }}</subtitle>
+  <title>{{ site.title[site.active_lang] }}</title>
+  <subtitle>{{ site.description[site.active_lang] }}</subtitle>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <author>
     <name>{{ site.social.name }}</name>
