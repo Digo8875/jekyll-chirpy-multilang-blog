@@ -1,0 +1,14 @@
+- en:
+    phrase: My phrase 1 in EN
+    author: Rodrigo 1
+    image: /assets/img/quotes/rodrigo--my_phrase_1.png
+  pt-BR:
+    phrase: Minha frase 1 em pt-BR
+    author: Rodrigo 1
+    image: /assets/img/quotes/rodrigo--my_phrase_1.png
+
+- en:
+    phrase: Phrase 2
+      <br> only EN language
+      <br> no image
+    author: Rodrigo 2

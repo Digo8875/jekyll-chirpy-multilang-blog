@@ -1,0 +1,49 @@
+{% assign chosen_quote = site.data.quotes | sample %}
+
+{% assign quote_phrase = chosen_quote.[site.default_lang].phrase %}
+{% assign quote_author = chosen_quote.[site.default_lang].author %}
+{% assign quote_image = chosen_quote.[site.default_lang].image %}
+{% assign has_image = true %}
+
+{% if chosen_quote.[site.active_lang] != null %}
+  {% assign quote_phrase = chosen_quote.[site.active_lang].phrase %}
+  {% assign quote_author = chosen_quote.[site.active_lang].author %}
+  {% assign quote_image = chosen_quote.[site.active_lang].image %}
+{% endif %}
+
+{% if quote_image == null %}
+  {% assign has_image = false %}
+{% endif %}
+
+<div class="quote-wrapper">
+
+  {% if has_image %}
+  <div class="quote-phrase-box-with-image rounded-top">
+  {% else %}
+  <div class="quote-phrase-box rounded-top">
+  {% endif %}
+    {% if has_image %}
+    <div class="quote-phrase-image rounded-top" style="background-image: url('{{ quote_image }}')">
+    </div>
+    {% endif %}
+
+    <div class="quote-phrase-decoration">
+      "
+    </div>
+
+    <div class="quote-phrase">
+      {{ quote_phrase }}
+    </div>
+  </div>
+
+  {% if quote_image == null %}
+    <div class="quote-division"></div>
+  {% endif %}
+
+  {% if quote_author %}
+    <div class="quote-author">
+      - {{ quote_author }}
+    </div>
+  {% endif %}
+
+</div>
